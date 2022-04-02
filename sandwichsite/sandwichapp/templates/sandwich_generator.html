@@ -1,0 +1,23 @@
+{% extends 'sandwichapp.html' %}
+
+{% block heading %}{{sandwich | title}}{% endblock %}
+
+{% block subheading %}{% endblock %}
+
+{% block content %}
+{# <p>Keep refreshing the page for a new sandwich!</p> #}
+{% endblock %}
+
+{% block forms %}
+<form action={% url 'sandwich_generator' %} method="get">
+    <legend>↓ Click the button to make another sandwich.</legend>
+    <br/>
+    <button type="submit">Make another sandwich</button>
+</form>
+<br/>
+<form action={% url 'sandwich' %} method="get">
+    <legend>↓ Click the button to return to homepage.</legend>
+    <br/>
+    <button type="submit">Return to homepage</button>
+</form>
+{% endblock %}

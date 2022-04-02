@@ -1,0 +1,21 @@
+{% extends 'sandwichapp.html' %}
+
+{% block heading %}{{ingredient_type | title}}{% endblock %}
+
+{% block subheading %}Choose from:{% endblock %}
+
+{% block content %}
+<ul>
+    {% for ingredient in ingredients %}
+    <li>{{ingredient | title}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block forms %}
+<form action={% url 'sandwich' %} method="get">
+    <legend>↓ Click the button to return to homepage.</legend>
+    <br/>
+    <button type="submit">Return to homepage</button>
+</form>
+{% endblock %}
